@@ -1,0 +1,418 @@
+@import "https://code.highcharts.com/css/highcharts.css";
+
+html {
+  scroll-behavior: smooth;
+  background-color: #fafaef;
+  background: url(../images/background.png);
+  background-position: top;
+  background-size: 100vw auto;
+  background-repeat: repeat-y;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8em;
+  padding: 0;
+  margin: 0;
+  background-image: linear-gradient(#fafaef, #fafaef);
+  background-size: 10px 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+header {
+  position: absolute;
+  top: 0px;
+  width: 100vw;
+  margin: 0;
+  z-index: 1;
+}
+
+#header-logo {
+  display: block;
+  height: auto;
+  max-width: 28em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  margin-bottom: 0em;
+}
+
+footer {
+  width: 100vw;
+  text-align: center;
+  border-top: 10px solid #fafaef;
+  border-bottom: 10px solid #fafaef;
+  background-color: #fafaef;
+}
+
+#footer-logo {
+  display: block;
+  height: auto;
+  height: 8em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -4.8em;
+  margin-bottom: 1em;
+  transition: 0.3s;
+}
+
+#references{
+  max-width: 60em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#footer-logo:hover{
+  -webkit-filter: brightness(80%);
+}
+
+#form-button {
+  margin-left: auto;
+  margin-right: auto;
+
+  min-height: 20vh;
+  margin-top: 40vh;
+  margin-bottom: 40vh;
+
+  background-color: #fafaef;
+  padding: 1em;
+
+  text-align: center;
+  width: 27em;
+
+  transition: 0.3s;
+  box-shadow: 5px 5px darkgrey;
+}
+
+#carbon-form {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 80vw 1fr;
+}
+
+h2,
+#submitbutton {
+  font-family: "Dosis", sans-serif;
+  font-size: 2.6em;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-family: "Dosis", sans-serif;
+  font-size: 1.4em;
+  text-transform: uppercase;
+}
+
+.button:hover {
+  -webkit-filter: brightness(80%);
+}
+
+.selectcontainer {
+  grid-column: 2 / span 1;
+
+  background-color: #fafaef;
+  margin-top: 40vh;
+  margin-bottom: 40vh;
+  min-height: 40vh;
+
+  border: none;
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 2em;
+  padding-top: 0.5em;
+
+  box-shadow: 5px 5px darkgrey;
+}
+
+.selectcontainer h2 {
+  width: 100%;
+}
+
+.radiolabel {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: block;
+  height: 6em;
+  width: 6em;
+  font-family: "Dosis", sans-serif;
+  font-size: 1.4em;
+  text-transform: uppercase;
+  padding: 1em;
+  margin: 0.5em;
+  transition: 0.3s;
+  background-color: #a8d991;
+}
+
+.radioimage {
+  width: 4em;
+  height: auto;
+}
+
+.selectcontainer input {
+  position: absolute;
+  left: -9999px;
+}
+
+.radiolabel:hover {
+  -webkit-filter: brightness(80%);
+}
+
+input:checked + label {
+  background-color: #f2ab27;
+  transition: 0.3s;
+}
+
+.distancecontainer {
+  grid-column: 2 / span 1;
+
+  background-color: #fafaef;
+  margin-top: 40vh;
+  margin-bottom: 40vh;
+  min-height: 40vh;
+
+  border: none;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 2em;
+  padding-top: 0.5em;
+  box-shadow: 5px 5px darkgrey;
+}
+
+input[type="number"] {
+  padding: 0.5em;
+  text-align: center;
+  height: 2em;
+  font-size: 1.2em;
+  color: black;
+  outline:none;
+}
+
+#submitbutton {
+  border: none;
+  outline: none;
+  padding: 1em;
+  text-align: center;
+  font-size: 1.4em;
+  color: black;
+  background-color: #a8d991;
+  transition: 0.3s;
+}
+
+input[type="number"]::-webkit-inner-spin-button, input[type="submit"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type="number"]:focus, input[type="submit"]:focus{
+  box-shadow: 0 0 5px #f2ab27;
+  transition: 0.3s;
+  border: 1px solid #f2ab27;
+}
+
+#result-total {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hexagon {
+  padding: 2em;
+  color: white;
+  max-width: 24em;
+  margin: 2em 1em;
+}
+
+.hexagon h3 {
+  text-align: center;
+  padding: 0;
+}
+
+.info-card {
+  width: 100%;
+  height: 12em;
+  padding-top: 2.3em;
+  text-align: center;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.info-card h2 {
+  font-size: 3.6em;
+}
+
+.hexagon a {
+  text-decoration: none;
+  font-weight: bold;
+  font-style: normal;
+  color: inherit;
+}
+
+a{
+  color: inherit;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+#co2-result {
+  background-color: #730202;
+  box-shadow: 5px 5px #410101;
+
+}
+
+#tree-result {
+  background-color: #325947;
+  box-shadow: 5px 5px #20382d;
+
+}
+
+#sc-result {
+  background-color: #f2ab27;
+  box-shadow: 5px 5px #c1810c;
+
+}
+
+#bottom-form-button {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15em;
+  margin-top: 2em;
+  background-color: #a8d991;
+  text-align: center;
+  width: 27em;
+  padding: 1em;
+  transition: 0.3s;
+  box-shadow: 5px 5px darkgrey;
+}
+
+#references {
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 2.3em;
+  font-weight: bold;
+}
+
+footer p {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  font-weight: 400;
+}
+
+#summary-view {
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fafaef;
+  box-shadow: 5px 5px darkgrey;
+}
+
+#inner-element-summary {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2em;
+  margin-top: 30vh;
+}
+
+h1 {
+  font-family: "Dosis", sans-serif;
+  font-size: 6em;
+  text-transform: uppercase;
+  margin:0;
+}
+
+#inner-element-summary h2 {
+  margin:0;
+  padding: 0;
+}
+
+#views {
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fafaef;
+  box-shadow: 5px 5px darkgrey;
+}
+
+#alternatives {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80vw;
+  background-color: #fafaef;
+  box-shadow: 5px 5px darkgrey;
+}
+
+#subdiv-alternatives {
+  padding: 2em;
+}
+
+.highcharts-color-1 .highcharts-point {
+  fill: #434348;
+  stroke: none;
+}
+
+.highcharts-point {
+  fill: #325947;
+}
+
+.highcharts-color-0 {
+  fill: #325947;
+  stroke: none;
+}
+.highcharts-background {
+  fill: #f2f0eb30;
+}
+
+.highcharts-root {
+  font-family: "Open Sans", sans-serif;
+}
+
+.highcharts-title{
+  font-family: "Dosis", sans-serif !important;
+  text-transform: uppercase;
+  font-size: 2.6em !important;
+  color: #ce3815 !important;
+}
+
+.highcharts-subtitle {
+  font-family: "Dosis", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.6em;
+  color: #ce3815;
+}
+
+.highcharts-axis-labels, .highcharts-legend {
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 1.2em !important;
+}
+
+.highcharts-grid-line {
+  fill: #00092510;
+  stroke: #00092540;
+}
+
+.highcharts-axis-line {
+  fill: #ce3815;
+  stroke: #ce3815;
+}
+
+.highcharts-credits {
+  visibility: hidden;
+}
