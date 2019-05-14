@@ -1,4 +1,4 @@
-const CarbonCounter = require('../models/CarbonCounter.js');
+const CarbonCounter = require('../models/carboncounter.js');
 const assert = require('assert');
 
 describe('CarbonCounter', () => {
