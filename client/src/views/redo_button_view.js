@@ -6,7 +6,6 @@ const RedoButtonView = function(button) {
 
 RedoButtonView.prototype.bindEvents = function () {
   PubSub.subscribe('FormView:TripDetails', evt=>{
-    console.log('occured');
     this.render();
     this.button.addEventListener("click", evt => {
       PubSub.publish("FormView:RequestData");

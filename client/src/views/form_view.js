@@ -46,7 +46,6 @@ FormView.prototype.render = function(formData) {
       const submit = this.createSubmitInput(idNum);
 
       submit.addEventListener("click", evt => {
-        console.log(this.currentItems)
         this.handleSubmit(evt);
       });
     }

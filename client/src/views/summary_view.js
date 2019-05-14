@@ -9,7 +9,6 @@ const SummaryView = function (element) {
 SummaryView.prototype.bindEvents = function () {
   PubSub.subscribe('FormView:TripDetails', evt => {
     this.element.innerHTML = ``;
-    console.dir(evt.detail);
     const obj = {...evt.detail};
     const distance = evt.detail.distance;
     delete obj.co2e;
