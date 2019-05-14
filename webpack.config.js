@@ -4,7 +4,7 @@ const config = {
     path: `${__dirname}/client/public/js`,
     filename: 'bundle.js'
   },
-  mode: 'development'
+  mode: 'production'
 };
 
 module.exports = config;

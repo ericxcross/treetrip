@@ -1,11 +1,8 @@
-const RequestHelper = require('../helpers/request_helper.js');
 const PubSub = require('../helpers/pub_sub.js');
+const alternativeModes = require('../content/alternative_modes.js');
+const transportModes = require('../content/modes_tree.js');
 
 const CarbonCounter = function () {
-    this.urlAllData = 'http://localhost:3000/api/transportmodes';
-    this.urlAlternativesData = 'http://localhost:3000/api/alternativeTransportModes';
-    this.request = new RequestHelper(this.urlAllData);
-    this.requestAlternatives = new RequestHelper(this.urlAlternativesData);
     this.alternatives = null;
 };
 
@@ -75,29 +72,18 @@ CarbonCounter.prototype.bindEvents = function () {
                     };
                     alternativeTransport.push(alternativeData);
                 }
-
             }
         });
         PubSub.publish('CarbonCounter:AlternativeTravelOptions', alternativeTransport);
-
     })
-
     PubSub.subscribe('CarbonCounter:AlternativesDataFound', (evt) => {
         this.alternatives = evt.detail[0].alternatives;
     })
 };
 
 CarbonCounter.prototype.getData = function () {
-    this.request.get()
-        .then((data) => {
-            PubSub.publish('CarbonCounter:DataFound', data);
-        })
-        .catch(console.error);
-    this.requestAlternatives.get()
-        .then((data) => {
-            PubSub.publish('CarbonCounter:AlternativesDataFound', data);
-        })
-        .catch(console.error);
+  PubSub.publish('CarbonCounter:DataFound', transportModes);
+  PubSub.publish('CarbonCounter:AlternativesDataFound', alternativeModes);
 };
 
 CarbonCounter.prototype.viableAlternativeArray = function (distance) {
@@ -126,6 +112,5 @@ CarbonCounter.prototype.calculateSocialCost = function (carbonTotal) {
     const socialCost = 0.0005 * carbonTotal;
     return parseFloat(Math.round(socialCost * 100) / 100).toFixed(2);
 };
-
 
 module.exports = CarbonCounter;

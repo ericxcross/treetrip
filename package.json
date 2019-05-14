@@ -7,7 +7,8 @@
     "start": "node server/server.js",
     "test": "mocha client/src/specs",
     "server:dev": "nodemon server/server.js",
-    "build": "webpack -w"
+    "dev:build": "webpack -w",
+    "build": "webpack -p"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
   },
   "dependencies": {
     "body-parser": "^1.18.3",
+    "dotenv": "^8.0.0",
     "eslint": "^5.16.0",
     "express": "^4.16.4",
     "mongodb": "^3.2.3"

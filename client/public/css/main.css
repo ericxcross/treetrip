@@ -58,9 +58,12 @@ footer {
 }
 
 #references{
-  max-width: 60em;
+  max-width: 48em;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  text-align: center;
 }
 
 #footer-logo:hover{
@@ -291,27 +294,15 @@ a:hover {
 #bottom-form-button {
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 15em;
-  margin-top: 2em;
-  background-color: #a8d991;
+  margin-bottom: 12em;
+  margin-top: 6em;
+  background-color: #fafaef;
+  color: black;
   text-align: center;
   width: 27em;
   padding: 1em;
   transition: 0.3s;
   box-shadow: 5px 5px darkgrey;
-}
-
-#references {
-  text-align: center;
-  margin-top: 2em;
-  margin-bottom: 2.3em;
-  font-weight: bold;
-}
-
-footer p {
-  padding-top: 1em;
-  padding-bottom: 1em;
-  font-weight: 400;
 }
 
 #summary-view {
