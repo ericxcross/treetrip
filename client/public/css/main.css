@@ -395,13 +395,13 @@ h1 {
 }
 
 .highcharts-grid-line {
-  fill: #00092510;
-  stroke: #00092540;
+  fill: darkgrey;
+  stroke: darkgrey;
 }
 
 .highcharts-axis-line {
-  fill: #ce3815;
-  stroke: #ce3815;
+  fill: grey;
+  stroke: grey;
 }
 
 .highcharts-credits {
