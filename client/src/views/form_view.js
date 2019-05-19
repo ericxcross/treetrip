@@ -123,8 +123,7 @@ FormView.prototype.createDistanceField = function(idNum) {
   distanceInput.name = "distance";
   distanceInput.min = 0;
   distanceInput.step = 1;
-  distanceInput.value = 1;
-  distanceInput.attributes("required","")
+  distanceInput.required = true;
   distanceInput.placeholder = "enter distance travelled in kilometres"
   distanceInput.classList.add(`select-${idNum}`);
   return distanceInput;
