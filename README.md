@@ -5,8 +5,7 @@
 
 Find out the number of trees required to absorb the released CO2 from your trip by selecting from the transport categories and providing the distance travelled.
 
-#Demo the App on **[Heroku](https://treetrip-co2e.herokuapp.com/)
-
+## Demo the App on **[Heroku](https://treetrip-co2e.herokuapp.com/)**
 
 ![Screenshot landing page](client/public/images/screenshot1.png)
 ![Screenshot first category](client/public/images/screenshot2.png)
